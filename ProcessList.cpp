@@ -108,7 +108,7 @@ INT_PTR CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
                            if (lstrcmpi(pe32.szExeFile, processName) == 0) {
 
                                TCHAR szInfo[MAX_PATH * 2];
-                               wsprintf(szInfo, TEXT("Process ID: %lu\nParent Process ID: %lu"), pe32.th32ProcessID, pe32.th32ParentProcessID);
+                               wsprintf(szInfo, TEXT("Process ID: %lu\nParent Process ID: %lu\nThreads: %lu"), pe32.th32ProcessID, pe32.th32ParentProcessID,pe32.cntThreads);
                                MessageBox(hwnd, szInfo, TEXT("Additional Info"), MB_OK | MB_ICONINFORMATION);
 
                                break;
